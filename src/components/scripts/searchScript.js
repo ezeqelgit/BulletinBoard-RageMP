@@ -24,6 +24,7 @@ export const searchScript = {
       selectedImage: '',
       visibleInfoSell: false, 
       visibleInfoItem: false,
+      currentItem: null,
       visibleWindow: false,
       visibleModal: true,
       isVisibleContent: true,
@@ -31,8 +32,8 @@ export const searchScript = {
         isClickMarkVisible: false
       },
       items: [
-        { id: 1,},
-        { id: 2 },
+        { id: 1, nameItem: 'Tactica lSMG', categoryItem: 'Вооружение',},
+        { id: 2, nameItem: 'Navy Revolver', categoryItem: 'Вооружение2',},
         { id: 3 },
         { id: 4 },
         { id: 5 },
@@ -228,14 +229,16 @@ export const searchScript = {
       this.activeItem = null;
     },
 
-    toggleinfoSelling(){
+    toggleinfoSelling(item){
       this.visibleInfoItem = false;
       this.visibleInfoSell = true;
+      this.currentItem = item;
     },
 
-    toggleinfoItem(){
+    toggleinfoItem(item){
       this.visibleInfoSell = false;
       this.visibleInfoItem = true;
+      this.currentItem = item;
     },
 
     handleClickOutside(event) {

@@ -9,12 +9,12 @@
             <div v-for="item in items" :key="item.id" class="itemSell" @click="showModal($event, item)">
               <div class="modelToSell" v-if="activeItem === item" :style="modalStyle">
             <div class="toDoSell">
-              <div class="information" @click="toggleinfoItem">
+              <div class="information" @click="toggleinfoItem(item)">
                 <button class="butInfo">
                   <span>Информация</span>
                 </button>
               </div>
-              <div class="toSell" @click="toggleinfoSelling">
+              <div class="toSell" @click="toggleinfoSelling(item)">
                 <button class="butToSell">
                   <span>Продать</span>
                 </button>
@@ -27,7 +27,7 @@
                 </div>
               </div>
               <div class="nameItem">
-                <span>{{ nameItem }}</span>
+                <span>{{ item.nameItem }}</span>
               </div>
             </div>
           </div>
@@ -46,10 +46,10 @@
           <div class="rightTop">
             <div class="wrapperRightTop">
               <div class="titleRightTop">
-                <span class="textRightTop">Gun</span>
+                <span class="textRightTop">{{currentItem.nameItem}}</span>
               </div>
               <div class="subTitleRightTop">
-                <span class="subTextRightTop">Оружие</span>
+                <span class="subTextRightTop">{{currentItem.categoryItem}}</span>
               </div>
             </div>
             <div class="infoRightTop">
@@ -71,10 +71,10 @@
           <div class="rightTop">
             <div class="wrapperRightTop">
               <div class="titleRightTop">
-                <span class="textRightTop">Gun</span>
+                <span class="textRightTop">{{currentItem.nameItem}}</span>
               </div>
               <div class="subTitleRightTop">
-                <span class="subTextRightTop">Оружие</span>
+                <span class="subTextRightTop">{{currentItem.categoryItem}}</span>
               </div>
             </div>
             <div class="infoRightTop">
