@@ -1,5 +1,5 @@
 <template>
-  <div class="blocksBoard" v-if="visibleWindow">
+  <div class="blocksBoard">
     <div class="search">
       <div class="headerSearch">
         <div class="titleHeader">
@@ -118,7 +118,7 @@
         </div>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</span>
         </div>
-        <div class="selling">
+        <div class="selling" @click="notifyParent">
           <button class="sellingButton">
             <span class="textSell">Продать предметы</span>
           </button>
@@ -226,6 +226,10 @@
     },
     methods: {
       ...searchScript.methods,
+
+      notifyParent() {
+      this.$emit('toggleView');
+    }
     },
   };
 </script>

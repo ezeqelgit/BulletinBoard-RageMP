@@ -1,8 +1,8 @@
 <template>
   <div class="boardWindow">
     <div class="infoWindow">
-      <SellingButton></SellingButton>
-      <BlocksBoard></BlocksBoard>
+      <BlocksBoard v-if="visibleWindow" @toggleView="toggleView"></BlocksBoard>
+      <SellingButton v-if="visibleSell"></SellingButton>
     </div>
   </div>
 </template>
@@ -24,10 +24,18 @@
   data() {
     return {
       ...searchScript.data(),
+
+      visibleWindow: true,
+      visibleSell: false,
     }
   },
   methods: {
-    ...searchScript.methods,  
+    ...searchScript.methods, 
+
+    toggleView() {
+      this.visibleWindow = !this.visibleWindow;
+      this.visibleSell = !this.visibleSell;
+    }
 },
 }
 </script>

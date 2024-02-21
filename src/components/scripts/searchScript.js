@@ -11,9 +11,9 @@ import { executeClient } from './rage.js';
 import './events.js';
 
 export const searchScript = {
-  props: {
-    isModalVisible: Boolean,
-  },
+  // props: {
+  //   isModalVisible: Boolean,
+  // },
   data() {
     return {
       // isModalVisible: false,
@@ -25,9 +25,9 @@ export const searchScript = {
       visibleInfoSell: false, 
       visibleInfoItem: false,
       currentItem: null,
-      visibleWindow: false,
       visibleModal: true,
       isVisibleContent: true,
+      isModalVisible: false,
       visible: {
         isClickMarkVisible: false
       },
@@ -56,30 +56,30 @@ export const searchScript = {
         { id: 22 },
         { id: 23 },
         { id: 24 },
-        { id: 19 },
-        { id: 20 },
-        { id: 21 },
-        { id: 22 },
-        { id: 23 },
-        { id: 24 },
-        { id: 19 },
-        { id: 20 },
-        { id: 21 },
-        { id: 22 },
-        { id: 23 },
-        { id: 24 },
-        { id: 19 },
-        { id: 20 },
-        { id: 21 },
-        { id: 22 },
-        { id: 23 },
-        { id: 24 },
-        { id: 19 },
-        { id: 20 },
-        { id: 21 },
-        { id: 22 },
-        { id: 23 },
-        { id: 24 },
+        { id: 25 },
+        { id: 26 },
+        { id: 27 },
+        { id: 28 },
+        { id: 29 },
+        { id: 30 },
+        { id: 31 },
+        { id: 32 },
+        { id: 33 },
+        { id: 34 },
+        { id: 35 },
+        { id: 36 },
+        { id: 37 },
+        { id: 38 },
+        { id: 39 },
+        { id: 40 },
+        { id: 41 },
+        { id: 42 },
+        { id: 43 },
+        { id: 44 },
+        { id: 45 },
+        { id: 46 },
+        { id: 47 },
+        { id: 48 },
       ],
 
       activeItem: null,
@@ -179,6 +179,7 @@ export const searchScript = {
 
         { name: 'Разное', isOpen: false, checked: false },
       ],
+
     };
   },
   computed: {

@@ -213,3 +213,49 @@ button{
 .listCategories::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.43);
 }
+
+.selling{
+  position: relative;
+  width: 25%;
+  height: 50px;
+  background: radial-gradient(220.18% 198.25% at 50% 50%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.00) 100%);
+  font-family: 'Akrobat';
+  font-size: 17px;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+
+.sellingButton{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textSell{
+  color: white;
+  z-index: 999;
+}
+
+.selling::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 6px;
+  background: radial-gradient(359.45% 198.46% at 50% 50%, #1C92FF 0%, #12395C 100%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 11;
+}
+
+.selling:hover::after{
+  opacity: 1;
+}
+
+.selling:active::after{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), radial-gradient(359.45% 198.46% at 50% 50%, #1C92FF 0%, #12395C 100%);
+}
