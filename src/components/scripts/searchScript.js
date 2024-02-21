@@ -23,6 +23,7 @@ export const searchScript = {
       slotTimers: [],
       selectedImage: '',
       visibleInfoSell: false, 
+      visibleInfoItem: false,
       visibleWindow: false,
       visibleModal: true,
       isVisibleContent: true,
@@ -228,7 +229,13 @@ export const searchScript = {
     },
 
     toggleinfoSelling(){
+      this.visibleInfoItem = false;
       this.visibleInfoSell = true;
+    },
+
+    toggleinfoItem(){
+      this.visibleInfoSell = false;
+      this.visibleInfoItem = true;
     },
 
     handleClickOutside(event) {
