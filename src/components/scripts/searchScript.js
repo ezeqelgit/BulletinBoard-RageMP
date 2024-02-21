@@ -19,12 +19,70 @@ export const searchScript = {
       // isModalVisible: false,
       // slotTimers: this.initializeTimers(),
       selectedId: '',
+      nameItem: 'Gun',
       slotTimers: [],
       selectedImage: '',
+      visibleInfoSell: false, 
+      visibleWindow: false,
+      visibleModal: true,
       isVisibleContent: true,
       visible: {
         isClickMarkVisible: false
       },
+      items: [
+        { id: 1,},
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+        { id: 7 },
+        { id: 8 },
+        { id: 9 },
+        { id: 10 },
+        { id: 11 },
+        { id: 12 },
+        { id: 13 },
+        { id: 14 },
+        { id: 15 },
+        { id: 16 },
+        { id: 17 },
+        { id: 18 },
+        { id: 19 },
+        { id: 20 },
+        { id: 21 },
+        { id: 22 },
+        { id: 23 },
+        { id: 24 },
+        { id: 19 },
+        { id: 20 },
+        { id: 21 },
+        { id: 22 },
+        { id: 23 },
+        { id: 24 },
+        { id: 19 },
+        { id: 20 },
+        { id: 21 },
+        { id: 22 },
+        { id: 23 },
+        { id: 24 },
+        { id: 19 },
+        { id: 20 },
+        { id: 21 },
+        { id: 22 },
+        { id: 23 },
+        { id: 24 },
+        { id: 19 },
+        { id: 20 },
+        { id: 21 },
+        { id: 22 },
+        { id: 23 },
+        { id: 24 },
+      ],
+
+      activeItem: null,
+      modalStyle: {},
+      
       searchFields: {
         itemName: '',
         storekeeper: '',
@@ -147,6 +205,32 @@ export const searchScript = {
     getHoursFromTime(timeString) {
       const timeParts = timeString.split(':');
       return parseInt(timeParts[0]);
+    },
+
+    showModal(event, item) {
+      if (this.activeItem === item) {
+        this.hideModal();
+      } else {
+        this.activeItem = item;
+        const elementRect = event.currentTarget.getBoundingClientRect();
+        this.modalStyle = {
+          display: 'block',
+          top: `${elementRect.top + window.scrollY}px`,
+          left: `${elementRect.left + window.scrollX}px`
+        };
+
+        event.stopPropagation();
+
+      }
+    },
+    hideModal() {
+      this.activeItem = null;
+    },
+
+    handleClickOutside(event) {
+      if (this.$refs.gridSell && !this.$refs.gridSell.contains(event.target)) {
+        this.hideModal();
+      }
     },
 
     initializeTimers() {
@@ -299,6 +383,13 @@ export const searchScript = {
 
     window.addEventListener('keydown', (e) => this.handleKeydown(e));
 
+    document.addEventListener('click', this.handleClickOutside);
+
   },
+
+  beforeDestroy() {
+    // Удаляем обработчик клика при уничтожении компонента
+    document.removeEventListener('click', this.handleClickOutside);
+  }
 };
 

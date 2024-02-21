@@ -1,5 +1,5 @@
 <template>
-  <div class="blocksBoard">
+  <div class="blocksBoard" v-if="visibleWindow">
     <div class="search">
       <div class="headerSearch">
         <div class="titleHeader">
@@ -112,11 +112,16 @@
         <div class="titleBoard">
           <span>ДОСКА<br>ОБЪЯВЛЕНИЙ</span>
         </div>
-        <div class="warror">
+        <div class="textTitle">
+          <div class="warror">
           <img src="./assets/svg/warror.svg">
         </div>
-        <div class="textTitle">
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</span>
+        </div>
+        <div class="selling">
+          <button class="sellingButton">
+            <span class="textSell">Продать предметы</span>
+          </button>
         </div>
       </div>
       <div class="infoBoard">
@@ -198,12 +203,14 @@
 <script>
   import { searchScript } from './scripts/searchScript.js';
   import ModalWindow from '@/components/ModalWindow.vue';
+  // import SellingButton from '@/components/SellingWindow.vue'
 
   export default {
     ...searchScript,
     components: {
       ...searchScript.components, 
       ModalWindow,
+      // SellingButton
     },
 
     created() {

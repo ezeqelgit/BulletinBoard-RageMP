@@ -1,7 +1,8 @@
 <template>
   <div class="boardWindow">
     <div class="infoWindow">
-      <BlocksBoard ></BlocksBoard>
+      <SellingButton></SellingButton>
+      <BlocksBoard></BlocksBoard>
     </div>
   </div>
 </template>
@@ -13,10 +14,12 @@
 <script>
   import BlocksBoard from '@/components/BlocksBoard.vue'
   import { searchScript } from './scripts/searchScript.js';
+  import SellingButton from '@/components/SellingWindow.vue'
 
   export default {
   components: {
     BlocksBoard,
+    SellingButton
   },
   data() {
     return {
