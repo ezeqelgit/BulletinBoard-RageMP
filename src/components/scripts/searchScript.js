@@ -227,6 +227,10 @@ export const searchScript = {
       this.activeItem = null;
     },
 
+    toggleinfoSelling(){
+      this.visibleInfoSell = true;
+    },
+
     handleClickOutside(event) {
       if (this.$refs.gridSell && !this.$refs.gridSell.contains(event.target)) {
         this.hideModal();

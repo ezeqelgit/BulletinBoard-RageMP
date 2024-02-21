@@ -15,7 +15,7 @@
                 </button>
               </div>
               <div class="toSell">
-                <button class="butToSell">
+                <button class="butToSell" @click="toggleinfoSelling">
                   <span>Продать</span>
                 </button>
               </div>
@@ -33,7 +33,23 @@
           </div>
         </div>
       </div>
-      <div class="infoSelling" v-if="visibleInfoSell"></div>
+      <div class="infoSelling" v-if="visibleInfoSell">
+        <div class="titleSell">
+          <span class="textTitleSell">Продажа</span>
+        </div>
+        <div class="topinfoSelling">
+          <div class="leftTop">
+            <div class="imgContentTop">
+              <img src="./assets/png/TacticalSMG.png">
+            </div>
+          </div>
+          <div class="rightTop">
+            <div class="titleRightTop">
+              <span class="textRightTop">Продажа</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </template>
   
