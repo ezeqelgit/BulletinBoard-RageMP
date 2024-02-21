@@ -1,0 +1,264 @@
+.titleBoard{
+  height: 100%;
+  width: 15%;
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 104%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-family: 'Akrobat';
+}
+
+.textTitle{
+  display: flex;
+  align-items: center;
+  font-family: 'Gilroy';
+  height: 10%;
+  width: 50%;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 139%;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+}
+
+.namesSlot{
+  text-transform: uppercase;
+  display: flex;
+  width: 98%;
+  height: 40px;
+  padding-top: 5px;
+  font-family: 'Akrobat';
+  color: white;
+  font-size: 15px;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 40px;
+  margin-right: 40px;
+}
+
+.price{
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 40px;
+  margin-right: 40px;
+}
+
+.remainingTime{
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 40px;
+}
+
+.specifications{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 40px;
+}
+
+.slot{
+  max-height: 95%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.lineSlot{
+  display: flex;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  z-index: 22;
+}
+
+.actualSlot{
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 15px;
+  height: auto;
+  width: 98%;
+  border-radius: 4px;
+  background: var(--d, radial-gradient(283.13% 156.32% at 50% 50%, rgba(28, 146, 255, 0.25) 0%, rgba(18, 57, 92, 0.25) 100%));
+  overflow: hidden;
+  z-index: 20;
+}
+
+.actualSlot::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  border: 1px solid #1C92FF;
+  background: radial-gradient(283.13% 156.32% at 50% 50%, rgba(28, 146, 255, 0.55) 0%, rgba(18, 57, 92, 0.55) 100%);  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 21;
+}
+
+.actualSlot:hover::after{
+  opacity: 1;
+}
+
+.actualSlot:active::after{
+  border: 1px solid #1C92FF;
+  background: linear-gradient(0deg, rgba(132, 132, 132, 0.20) 0%, rgba(132, 132, 132, 0.20) 100%), radial-gradient(283.13% 156.32% at 50% 50%, rgba(28, 146, 255, 0.55) 0%, rgba(18, 57, 92, 0.55) 100%);
+}
+
+.slot::-webkit-scrollbar {
+  width: 2px;
+}
+
+.slot::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.slot::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.43);
+}
+
+.nameZone{
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  width: 20%;
+  height: 100%;
+}
+
+.picItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 0 10px;
+  height: 75px;
+  width: 75px;
+  border-radius: 4px;
+  background: radial-gradient(283.13% 156.32% at 50% 50%, rgba(28, 146, 255, 0.25) 0%, rgba(18, 57, 92, 0.25) 100%);
+}
+
+.picItem img{
+  height: auto;
+  width: 65px;
+}
+
+.infoItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+  font-size: 18px;
+  font-family: 'Akrobat';
+  color: white;
+}
+
+.setItems{
+  display: flex;
+}
+
+.setItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  margin-right: 3px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.setItem:last-child{
+  margin-right: 0;
+}
+
+.countZone{
+  display: flex;
+  margin-right: 40px;
+  height: 100%;
+  width: 20%;
+  align-items: center;
+  color: #A8FF63;
+  font-size: 20px;
+  font-family: 'Akrobat';
+  text-shadow: 0px 0px 17px rgba(168, 255, 99, 0.55);
+  text-align: left;
+}
+
+.remainingTimeZone{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 20px;
+  height: 100%;
+  width: 20%;
+  color: white;
+  font-size: 15px;
+  font-family: 'Akrobat';
+}
+
+.infoRemainingTimeZone{
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userName{
+  display: flex;
+  align-items: center;
+}
+
+.timing{
+  display: flex;
+  align-items: center;
+}
+
+.location{
+  display: flex;
+  align-items: center;
+}
+
+.location img{
+  margin-right: 8px;
+}
+
+.userName img{
+  margin-right: 8px;
+}
+
+.timing img{
+  margin-right: 8px;
+}
+
+.specificationsZone{
+  display: flex;
+  height: 100%;
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+}
+
+.conditionItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conditionItem span{
+  color: white;
+  font-size: 20px;
+  font-family: 'Akrobat';
+}

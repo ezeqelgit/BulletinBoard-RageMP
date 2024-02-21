@@ -1,0 +1,106 @@
+.mainWindow{
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background: rgba(14, 13, 22, 0.96);
+}
+
+.firstCircle{
+  position: absolute;
+  height: 40%;
+  width: 40%;
+  left: -10%;
+  top: -10%;
+  border-radius: 1021px;
+  background: rgba(28, 146, 255, 0.28);
+  filter: blur(317px);
+}
+
+.secondCircle{
+  position: absolute;
+  height: 40%;
+  width: 40%;
+  bottom: -30%;
+  right: -10%;
+  border-radius: 1021px;
+  background: rgba(28, 146, 255, 0.28);
+  filter: blur(317px);
+}
+
+.firstAsset{
+  position: absolute;
+  left: 0;
+}
+
+.secondAsset{
+  position: absolute;
+  right: 0;
+}
+
+.thirdAsset{
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+
+.fourthAsset{
+  position: absolute;
+  bottom: -5%;
+  right: 50px;
+  z-index: 0;
+}
+
+.closeMain{
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  left: 95vw;
+  top: 5vh;
+  border-radius: 3px;
+  background: rgba(255, 100, 100, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.closeMain svg{
+  fill: #FF6464;
+  z-index: 32;
+  position: absolute;
+}
+
+.closeMain::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: transparent; /* Фон псевдоэлемента сделать прозрачным */
+  transition: opacity 0.5s, background 0.5s;
+  z-index: 31;
+}
+
+.closeMain:not(.disabled):hover svg {
+  fill: #FFFFFF;
+  z-index: 33;
+}
+
+.closeMain:not(.disabled):hover::after {
+  opacity: 1;
+  background: #FF6464;
+}
+
+.closeMain:not(.disabled):active::after {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #FF6464;
+}
+
+.closeMain:not(.disabled):active svg {
+  fill: #FFEFEF; /* Черный цвет при нажатии */
+  z-index: 34;
+}
+
