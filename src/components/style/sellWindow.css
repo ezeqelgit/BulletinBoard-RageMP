@@ -9,6 +9,12 @@
   transform: translate(-50%, -50%); */
 }
 
+.inputClick::-webkit-outer-spin-button,
+.inputClick::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .inventoryBlock{
   display: flex;
   align-items: center;
@@ -117,8 +123,8 @@
 
 .modelToSell{
   position: fixed;
-  width: 200px;
-  height: 95px;
+  width: 12vw;
+  height: 11vh;
   transform: translate(-43%, 2%);
   background: #100F17;
   z-index: 14;
@@ -126,7 +132,7 @@
 }
 
 .toDoSell{
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'Akrobat';
   color: white;
   display: flex;
@@ -345,4 +351,16 @@
   font-weight: 400;
   font-size: 20px;
   text-align: left;
+}
+
+.buttonResetText{
+  text-transform: uppercase;
+}
+
+.aboutItem{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-family: 'Gilroy';
+  color: white;
 }

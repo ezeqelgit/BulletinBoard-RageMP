@@ -1,8 +1,12 @@
 <template>
   <div class="boardWindow">
     <div class="infoWindow">
-      <BlocksBoard v-if="visibleWindow" @toggleView="toggleView"></BlocksBoard>
-      <SellingButton v-if="visibleSell"></SellingButton>
+      <BlocksBoard 
+        v-if="visibleWindow" 
+        @toggleView="toggleView"></BlocksBoard>
+      <SellingButton 
+        v-if="visibleSell" 
+        @toggleViewSell="toggleViewSell"></SellingButton>
     </div>
   </div>
 </template>
@@ -35,6 +39,11 @@
     toggleView() {
       this.visibleWindow = !this.visibleWindow;
       this.visibleSell = !this.visibleSell;
+    },
+
+    toggleViewSell(){
+      this.visibleWindow = true;
+      this.visibleSell = false;
     }
 },
 }

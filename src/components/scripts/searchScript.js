@@ -22,12 +22,16 @@ export const searchScript = {
       nameItem: 'Gun',
       slotTimers: [],
       selectedImage: '',
+      commission: true,
+      commissionSum: 0,
       visibleInfoSell: false, 
       visibleInfoItem: false,
       currentItem: null,
       visibleModal: true,
       isVisibleContent: true,
       isModalVisible: false,
+      inputValue: null, 
+      commentValue: '',
       visible: {
         isClickMarkVisible: false
       },
@@ -81,6 +85,12 @@ export const searchScript = {
         { id: 47 },
         { id: 48 },
       ],
+
+      aboutItems: {
+        'NavyRevolver': ['Text text text text text text text text text text text text text text text text text text']
+      },
+
+      aboutItemText: '',
 
       activeItem: null,
       modalStyle: {},
@@ -201,13 +211,23 @@ export const searchScript = {
 
         return itemNameMatch && storekeeperMatch && categoryOrSubcategoryMatch && timeMatch;
       });
-    }
+    },
+
+    aboutText() {
+      const sanitizedItemName = this.currentItem.nameItem.replace(/[^a-zA-Z0-9]/g, '');
+      return this.aboutItems[sanitizedItemName] ? this.aboutItems[sanitizedItemName].join(' ') : '';
+    },
   },
 
   methods: {
     getHoursFromTime(timeString) {
       const timeParts = timeString.split(':');
       return parseInt(timeParts[0]);
+    },
+
+    calculateCommission() {
+      const rate = this.commission ? 0.04 : 0.05;
+      this.commissionSum = (this.inputValue * rate).toFixed(2); 
     },
 
     showModal(event, item) {
@@ -378,10 +398,40 @@ export const searchScript = {
     this.closeModal();
   },
 
+  sellItem() {
+    if (!this.currentItem || !this.currentItem.id) {
+      alert("Выберите товар для продажи.");
+      return;
+    }
+
+    const payload = {
+      id: this.currentItem.id,
+      price: this.inputValue,
+      comment: this.commentValue, 
+    };
+
+    const payloadString = JSON.stringify(payload);
+
+    executeClient('sellItem', payloadString);
+
+    setTimeout(() => {
+      this.fetchDataFromBackend();
+    }, 1000);
+  },
+
+  requestItemDetails(item) {
+    if (!item || !item.id) {
+      console.error("Item ID is missing");
+      return;
+    }
+
+    executeClient('requestItemDetails', JSON.stringify({ id: item.id }));
+  },
+
   getImagePath(imageName) {
     const sanitizedImageName = imageName.replace(/[^a-zA-Z0-9]/g, '');
     return require(`../assets/png/${sanitizedImageName}.png`);
-  }
+  },
 },
 
   mounted() {
@@ -398,13 +448,24 @@ export const searchScript = {
 
     window.addEventListener('keydown', (e) => this.handleKeydown(e));
 
-    document.addEventListener('click', this.handleClickOutside);
+    window.events.addEvent('receiveItemDetails', (data) => {
+      try {
+        const itemDetails = JSON.parse(data);
+        const index = this.items.findIndex(item => item.id === itemDetails.id);
+        if (index !== -1) {
+          this.$set(this.items, index, {
+            ...this.items[index],
+            ...itemDetails
+          });
+        }
+      } catch (error) {
+        console.error('Ошибка при обработке данных предмета:', error);
+      }
+    });
 
   },
 
-  beforeDestroy() {
-    // Удаляем обработчик клика при уничтожении компонента
-    document.removeEventListener('click', this.handleClickOutside);
-  }
 };
+
+
 

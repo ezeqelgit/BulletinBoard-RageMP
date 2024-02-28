@@ -15,5 +15,6 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  }, 
+  "include": ["/node_modules/@ragempcommunity/index.d.ts"]
 }

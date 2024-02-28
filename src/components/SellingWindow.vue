@@ -64,7 +64,7 @@
             <span>ПРЕДЛАГАЕМАЯ ЦЕНА</span>
           </div>
           <div class="inputSearch">
-            <input type="text" class="inputClick" v-model="searchFields.itemName">
+            <input type="number" class="inputClick" v-model.number="inputValue" @input="calculateCommission">
           </div>
         </div>
         <div class="variantsSearch">
@@ -72,7 +72,7 @@
             <span>КОММЕНТАРИЙ</span>
           </div>
           <div class="inputSearch">
-            <input type="text" class="inputClick" v-model="searchFields.storekeeper">
+            <input type="text" class="inputClick" v-model="commentValue">
           </div>
         </div>
         <div class="variantsSearch">
@@ -81,17 +81,17 @@
           </div>
           <div class="commissionText">
             <span>5% (С ПРЕМИУМОМ 4%)</span>
-            <span class="commissionSum">10Р.</span>
+            <span class="commissionSum">{{ commissionSum }}Р.</span>
           </div>
         </div>
-        <div class="buttonResetBlock">
-          <button type="reset" class="buttonReset" @click="resetSearchFields">
+        <div class="buttonResetBlock" @click="sellItem">
+          <button type="number" class="buttonReset">
             <span class="buttonResetText">ПРОДАТЬ</span>
           </button>
         </div>
-        <div class="buttonResetBlock">
-          <button type="reset" class="buttonReset" @click="resetSearchFields">
-            <span class="buttonResetText">ОСТАВИТЬ</span>
+        <div class="buttonResetBlock" @click="resetMainWindow">
+          <button type="reset" class="buttonReset">
+            <span class="buttonResetText">ОТМЕНА</span>
           </button>
         </div>
         <div class="textTitleSelling">
@@ -101,7 +101,6 @@
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </span>
         </div>
       </div>
-
     </div>
 
     <div class="infoSelling" v-if="visibleInfoItem">
@@ -125,6 +124,9 @@
           </div>
         </div>
       </div>
+        <div class="aboutItem">
+          <span>{{ aboutText }}</span>
+        </div>
     </div>
 
   </div>
@@ -139,6 +141,19 @@
   import { searchScript } from './scripts/searchScript';
 
   export default {
-    ...searchScript,
+    ...searchScript, 
+
+    methods: {
+
+      ...searchScript.methods, 
+
+      resetMainWindow() {
+      this.$emit('toggleViewSell'); 
+    },
+
+    sellItem() {
+      this.$emit('toggleViewSell'); 
+    }
+    },
   }
 </script>
