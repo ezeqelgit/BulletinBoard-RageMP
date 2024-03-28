@@ -19,6 +19,8 @@ export const searchScript = {
       // isModalVisible: false,
       // slotTimers: this.initializeTimers(),
       selectedId: '',
+      pickedId: '',
+      chosenId: '',
       nameItem: 'Gun',
       slotTimers: [],
       selectedImage: '',
@@ -267,16 +269,15 @@ export const searchScript = {
     },
 
     toggleClosePrice() {
-      console.log('dawdaw')
       this.$emit('closeModalPrice');
     },
 
-    openModalPrice(){
+    openModalPrice(id){
+      this.pickedId = id;
       this.modalPrice = true;
     },
 
     handleClosePrice (){ 
-      console.log('dawldapwld[awld[a')
       this.modalPrice = false;
     },
 
@@ -414,6 +415,18 @@ export const searchScript = {
     const purchaseData = { id: this.selectedId }; 
     executeClient('sendPurchaseConfirmation', JSON.stringify(purchaseData));
     this.closeModal();
+  },
+
+  sendChangeConfirmation() {
+    const purchaseDataSec = { id: this.pickedId }; 
+    executeClient('sendChangeConfirmation', JSON.stringify(purchaseDataSec));
+    this.toggleClosePrice();
+  },
+
+  sendRemoveConfirmation(id) {
+    this.chosenId = id;
+    const purchaseDataThird = { id: this.chosenId }; 
+    executeClient('sendRemoveConfirmation', JSON.stringify(purchaseDataThird));
   },
 
   sellItem() {

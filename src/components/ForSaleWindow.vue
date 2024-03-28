@@ -28,27 +28,19 @@
                                             <span>{{ lot[3] }}</span>
                                         </div>
                                         <div class="addItems">
-                                            <!-- <div class="addItem">
-                                                <img :src="require(`./assets/png/itemForMainItem.png`)">
-                                            </div> -->
                                             <div v-for="(imageName, imgIndex) in lot[4]" :key="imgIndex" class="addItem">
                                                 <img :src="require(`./assets/png/${imageName}.png`)">
                                             </div>
-                                            <!-- <div class="addItem">
-                                                <img :src="require(`./assets/png/itemForMainItem.png`)">
-                                            </div> -->
                                         </div>
                                     </div>
                                     <div class="DownRightSubBlock">
-                                        <div class="DownRightButton" @click="openModalPrice">
+                                        <div class="DownRightButton" @click="openModalPrice(lot[0])">
                                             <button type="reset" class="buttonLot">
                                                 <span class="buttonLotText">изменить</span>
                                             </button>
-                                            <ModalPrice
-                                            :isVisiblePrice="modalPrice" @closeModalPrice="handleClosePrice"
-                                            ></ModalPrice>
                                         </div>
-                                        <div class="DownRightButton" @click="resetMainWindow">
+                                        <ModalPrice :isVisiblePrice="modalPrice" :id="pickedId" @closeModalPrice="handleClosePrice"></ModalPrice>
+                                        <div class="DownRightButton" @click="sendRemoveConfirmation(lot[0])">
                                             <button type="reset" class="buttonLot">
                                                 <span class="buttonLotText">снять</span>
                                             </button>
@@ -105,13 +97,12 @@
 <script>
     import { searchScript } from './scripts/searchScript';
     import ModalPrice from '@/components/ModalPrice.vue'
-
+   
     export default {
-
+        ...searchScript,
         components: {
-            ModalPrice
+            ModalPrice,
         },
-        ...searchScript, 
 
     methods: {
 
@@ -120,11 +111,6 @@
     resetMainWindow() {
         this.$emit('toggleViewSale'); 
     },
-
-    handleClosePrice() {
-        this.modalPrice != this.modalPrice;
-    }
-
     },
     }
 </script>

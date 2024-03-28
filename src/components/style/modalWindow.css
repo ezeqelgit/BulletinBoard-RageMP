@@ -13,7 +13,7 @@
     justify-content: center;
   }
   
-  .modalOverlay {
+.modalOverlay {
     position: absolute;
     top: -10vh;
     left: -5vw;

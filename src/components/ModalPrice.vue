@@ -1,7 +1,6 @@
 <template>
 <div v-if="isVisiblePrice">
-  <div class="modalOverlay" @click="toggleClosePrice"></div>
-  <!-- <div class="modalPrice"> -->
+  <div class="modalOverlayPrice" @click="toggleClosePrice"></div>
     <div class="modalBlock">
       <div class="infoPrice">
         <div class="changePrice">
@@ -10,12 +9,11 @@
             <input type="text" class="inputChange">
           </div>
         </div>
-        <div class="buttonChange">
+        <div class="buttonChange" @click="sendChangeConfirmation">
           <button class="textChange">Изменить</button>
         </div>
       </div>
     </div>
-  <!-- </div> -->
 </div>
 </template>
 
@@ -28,29 +26,18 @@
   import { searchScript } from './scripts/searchScript.js';
 
   export default {
-  components: {
-
-  },
-
   ...searchScript,
-
   props: {
     isVisiblePrice: Boolean,
+    id: String,
   },
-
-  data() {
-    return {
-      ...searchScript.data(),
-    }
-  },
+  // data() {
+  //   return {
+  //     ...searchScript.data(),
+  //   }
+  // },
   methods: {
     ...searchScript.methods, 
-
-    // toggleView() {
-    //   this.visibleWindow = !this.visibleWindow;
-    //   this.visibleSell = !this.visibleSell;
-    // },
-
 },
 }
 </script>
