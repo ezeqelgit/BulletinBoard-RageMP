@@ -1,0 +1,245 @@
+.forSaleWindow{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.forSaleWrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Akrobat';
+    width: 100%;
+    height: 100%;
+}
+
+.titleForSale{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Akrobat';
+    color: white;
+    text-transform: uppercase;
+}
+
+.forSaleLots{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.listLots{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.listLots::-webkit-scrollbar{
+    width: 2px;
+}
+
+.listLots::-webkit-scrollbar-track{
+    border-radius: 18px;
+    background: rgba(62, 62, 62, 0.5);
+}
+
+.listLots::-webkit-scrollbar-thumb{
+    border-radius: 18px;
+    background: rgb(255, 255, 255);
+}
+
+.gridLots{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    gap: 10px;
+}
+
+.blockLot{
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.wrapperLot{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Akrobat';
+    color: white;
+}
+
+.leftSubBlock{
+    height: 100%;
+    width: 55%;
+}
+
+.rightSubBlock{
+    height: 100%;
+    width: 40%;
+}
+
+.imgLot{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.imgLot img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.DownLeftSubBlock{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.nameLot{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.priceLot{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.priceTextLot{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.UpRightSubBlock{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.timerLot{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.timerLot img{
+    margin-right: 5px;
+}
+
+.addItems{
+    display: flex;
+    margin-top: 5px;
+}
+
+.addItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    border-radius: 4px;
+    margin-right: 3px;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.addItem img{
+    padding: 20%;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.DownRightSubBlock{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.DownRightButton{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.DownRightButton:last-child{
+    margin-top: 5%;
+}
+
+.buttonLot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: radial-gradient(220.18% 198.25% at 50% 50%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.00) 100%);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.buttonLotText{
+    z-index: 12;
+}
+
+.buttonLot::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 6px;
+    background: radial-gradient(359.45% 198.46% at 50% 50%, #1C92FF 0%, #12395C 100%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 11;
+}
+
+.buttonLot:hover::after{
+    opacity: 1;
+}
+
+.buttonLot:active::after{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), radial-gradient(359.45% 198.46% at 50% 50%, #1C92FF 0%, #12395C 100%);
+}
+
+.forSaleBackButton{
+    display: flex;
+    align-items: end;
+    width: 15%;
+    height: 10%;
+    margin-top: auto;
+    margin-right: auto;
+    font-family: 'Akrobat';
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+

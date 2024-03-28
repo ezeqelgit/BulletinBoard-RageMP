@@ -89,8 +89,9 @@ export const searchScript = {
       aboutItems: {
         'NavyRevolver': ['Text text text text text text text text text text text text text text text text text text']
       },
-
       aboutItemText: '',
+
+      modalPrice: false,
 
       activeItem: null,
       modalStyle: {},
@@ -110,7 +111,10 @@ export const searchScript = {
         ['0', 'Tactical SMG', '$ 987.587.666', 'ezeQel', '03:00:00', '[Кухня Гурмана] Кладовщик', ['conditionItem', 'conditionItem', 'conditionItem', 'conditionItem'], [85, 100, 74, 31], [], 'Вооружение', 'Пистолет'],
         ['1', 'Navy Revolver', '$ 187.527.636', 'Stas', '03:25:00', '[Кухня Гурмана] Кладовщик', [], [], ['itemForMainItem'], 'Одежда', 'Шапки'],
       ],
-      
+      lots: [
+        ['0', 'Tactical SMG', '$ 987.587.666', '03:00:00', []],
+        ['1', 'Navy Revolver', '$ 187.527.636', '03:25:00', ['itemForMainItem']],
+      ],
       categories: [
         { name: 'Вооружение', isOpen: false, checked: false, 
         subcategories: 
@@ -260,6 +264,20 @@ export const searchScript = {
       this.visibleInfoSell = false;
       this.visibleInfoItem = true;
       this.currentItem = item;
+    },
+
+    toggleClosePrice() {
+      console.log('dawdaw')
+      this.$emit('closeModalPrice');
+    },
+
+    openModalPrice(){
+      this.modalPrice = true;
+    },
+
+    handleClosePrice (){ 
+      console.log('dawldapwld[awld[a')
+      this.modalPrice = false;
     },
 
     handleClickOutside(event) {
@@ -466,6 +484,3 @@ export const searchScript = {
   },
 
 };
-
-
-

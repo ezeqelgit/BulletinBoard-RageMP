@@ -7,7 +7,7 @@
     height: 423px;
     border-radius: 17px;
     background: rgba(19, 18, 24, 0.96);
-    z-index: 1000; /* Убедитесь, что модальное окно будет поверх других элементов */
+    z-index: 1000; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,8 +19,8 @@
     left: -5vw;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-    z-index: 999; /* Убедитесь, что overlay находится ниже модального окна */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
   
   .modalWrapper{

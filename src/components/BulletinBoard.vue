@@ -3,10 +3,14 @@
     <div class="infoWindow">
       <BlocksBoard 
         v-if="visibleWindow" 
-        @toggleView="toggleView"></BlocksBoard>
+        @toggleViewSell="toggleViewSell"
+        @toggleViewSale="toggleViewSale"></BlocksBoard>
       <SellingButton 
         v-if="visibleSell" 
         @toggleViewSell="toggleViewSell"></SellingButton>
+      <ForSaleButton 
+        v-if="visibleForSale" 
+        @toggleViewSale="toggleViewSale"></ForSaleButton>
     </div>
   </div>
 </template>
@@ -18,12 +22,14 @@
 <script>
   import BlocksBoard from '@/components/BlocksBoard.vue'
   import { searchScript } from './scripts/searchScript.js';
-  import SellingButton from '@/components/SellingWindow.vue'
+  import SellingButton from '@/components/SellingWindow.vue';
+  import ForSaleButton from '@/components/ForSaleWindow.vue'
 
   export default {
   components: {
     BlocksBoard,
-    SellingButton
+    SellingButton,
+    ForSaleButton
   },
   data() {
     return {
@@ -31,19 +37,25 @@
 
       visibleWindow: true,
       visibleSell: false,
+      visibleForSale: false,
     }
   },
   methods: {
     ...searchScript.methods, 
 
-    toggleView() {
+    // toggleView() {
+    //   this.visibleWindow = !this.visibleWindow;
+    //   this.visibleSell = !this.visibleSell;
+    // },
+
+    toggleViewSell(){
       this.visibleWindow = !this.visibleWindow;
       this.visibleSell = !this.visibleSell;
     },
 
-    toggleViewSell(){
-      this.visibleWindow = true;
-      this.visibleSell = false;
+    toggleViewSale(){
+      this.visibleForSale = !this.visibleForSale;
+      this.visibleWindow = !this.visibleWindow;
     }
 },
 }

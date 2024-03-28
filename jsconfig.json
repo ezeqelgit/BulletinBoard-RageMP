@@ -16,5 +16,5 @@
       "scripthost"
     ]
   }, 
-  "include": ["/node_modules/@ragempcommunity/index.d.ts"]
+  // "include": ["/node_modules/@ragempcommunity/index.d.ts"]
 }

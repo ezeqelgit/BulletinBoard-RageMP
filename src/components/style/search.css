@@ -214,9 +214,20 @@ button{
   background: rgba(255, 255, 255, 0.43);
 }
 
+.buttonsWrapper{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.selling:last-child{
+  margin-left: 5%;
+}
+
 .selling{
   position: relative;
-  width: 25%;
+  width: 45%;
   height: 50px;
   background: radial-gradient(220.18% 198.25% at 50% 50%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.00) 100%);
   font-family: 'Akrobat';

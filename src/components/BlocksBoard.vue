@@ -112,16 +112,23 @@
         <div class="titleBoard">
           <span>ДОСКА<br>ОБЪЯВЛЕНИЙ</span>
         </div>
-        <div class="textTitle">
-        <!-- <div class="warror">
+        <!-- <div class="textTitle">
+        <div class="warror">
           <img src="./assets/svg/warror.svg">
-        </div> -->
-          <!-- <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</span> -->
         </div>
-        <div class="selling" @click="notifyParent">
-          <button class="sellingButton">
-            <span class="textSell">Продать предметы</span>
-          </button>
+          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</span>
+        </div> -->
+        <div class="buttonsWrapper">
+          <div class="selling" @click="notifyParentForSale">
+            <button class="sellingButton">
+              <span class="textSell">МОИ ОБЪЯВЛЕНИЯ</span>
+            </button>
+          </div>
+          <div class="selling" @click="notifyParent">
+            <button class="sellingButton">
+              <span class="textSell">Продать предметы</span>
+            </button>
+          </div>
         </div>
       </div>
       <div class="infoBoard">
@@ -228,7 +235,11 @@
       ...searchScript.methods,
 
     notifyParent() {
-      this.$emit('toggleView'); 
+      this.$emit('toggleViewSell'); 
+    },
+
+    notifyParentForSale() {
+      this.$emit('toggleViewSale'); 
     }
     },
   };
