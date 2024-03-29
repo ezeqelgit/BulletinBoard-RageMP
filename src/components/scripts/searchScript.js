@@ -33,6 +33,7 @@ export const searchScript = {
       isVisibleContent: true,
       isModalVisible: false,
       inputValue: null, 
+      changedValue: null, 
       commentValue: '',
       visible: {
         isClickMarkVisible: false
@@ -417,16 +418,10 @@ export const searchScript = {
     this.closeModal();
   },
 
-  sendChangeConfirmation() {
-    const purchaseDataSec = { id: this.pickedId }; 
-    executeClient('sendChangeConfirmation', JSON.stringify(purchaseDataSec));
-    this.toggleClosePrice();
-  },
-
   sendRemoveConfirmation(id) {
     this.chosenId = id;
-    const purchaseDataThird = { id: this.chosenId }; 
-    executeClient('sendRemoveConfirmation', JSON.stringify(purchaseDataThird));
+    const removeData = { id: this.chosenId }; 
+    executeClient('sendRemoveConfirmation', JSON.stringify(removeData));
   },
 
   sellItem() {
@@ -444,6 +439,26 @@ export const searchScript = {
     const payloadString = JSON.stringify(payload);
 
     executeClient('sellItem', payloadString);
+
+    setTimeout(() => {
+      this.fetchDataFromBackend();
+    }, 1000);
+  },
+
+  changeItem() {
+    if (!this.changedValue) {
+      alert("Выберите новую сумму продажи.");
+      return;
+    }
+
+    const changeload = {
+      id: this.pickedId,
+      price: this.changedValue,
+    };
+
+    const changeloadString = JSON.stringify(changeload);
+
+    executeClient('changeItem', changeloadString);
 
     setTimeout(() => {
       this.fetchDataFromBackend();

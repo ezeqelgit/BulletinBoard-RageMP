@@ -59,6 +59,12 @@
   color: white;
 }
 
+.inputChange::-webkit-outer-spin-button,
+.inputChange::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .inputChange{
   padding: 0 15px;
   width: 82%;

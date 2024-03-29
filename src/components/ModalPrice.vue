@@ -6,10 +6,10 @@
         <div class="changePrice">
           <span>Цена:</span>
           <div class="inputPrice">
-            <input type="text" class="inputChange">
+            <input type="number" class="inputChange"  v-model.number="changedValue">
           </div>
         </div>
-        <div class="buttonChange" @click="sendChangeConfirmation">
+        <div class="buttonChange" @click="changeItem">
           <button class="textChange">Изменить</button>
         </div>
       </div>
