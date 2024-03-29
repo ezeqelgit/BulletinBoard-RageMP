@@ -53,8 +53,8 @@
 
 .closeMain{
   position: absolute;
-  width: 46px;
-  height: 46px;
+  width: 2.5vw;
+  height: 2.5vw;
   left: 95vw;
   top: 5vh;
   border-radius: 3px;
@@ -70,6 +70,8 @@
   fill: #FF6464;
   z-index: 32;
   position: absolute;
+  width: 40%;
+  height: 40%;
 }
 
 .closeMain::after{
