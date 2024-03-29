@@ -412,6 +412,10 @@ export const searchScript = {
     this.startTimers();
   },
 
+  updateLots(newLots) {
+    this.lots = newLots;
+  },
+
   sendPurchaseConfirmation() {
     const purchaseData = { id: this.selectedId }; 
     executeClient('sendPurchaseConfirmation', JSON.stringify(purchaseData));
@@ -470,7 +474,6 @@ export const searchScript = {
       console.error("Item ID is missing");
       return;
     }
-
     executeClient('requestItemDetails', JSON.stringify({ id: item.id }));
   },
 
@@ -488,6 +491,16 @@ export const searchScript = {
         const newComponents = JSON.parse(data);
         this.updateComponents(newComponents);
       } catch (error) {
+        console.error('Ошибка при обработке данных:', error);
+      }
+    });
+
+    window.events.addEvent('getLots', (data) => {
+      try {
+        const newLots = JSON.parse(data);
+        this.updateLots(newLots);
+      }
+      catch (error) {
         console.error('Ошибка при обработке данных:', error);
       }
     });

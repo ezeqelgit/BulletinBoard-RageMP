@@ -289,19 +289,19 @@
   height: auto;
   margin-top: 5%;
   color: white;
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: 400;
   font-family: 'Akrobat';
 }
 
-.variantsSearch{
+/* .variantsSearch{
   display: flex;
   align-items: center;
   height: 50px;
   width: 100%;
   padding-top: 5px;
   text-transform: uppercase;
-}
+} */
 
 .nameVariant{
   display: flex;
@@ -310,14 +310,14 @@
   width: 40%;
 }
 
-.inputSearch{
+/* .inputSearch{
   height: 100%;
   width: 60%;
   display: flex;
   align-items: center;
-}
+} */
 
-.inputClick{
+/* .inputClick{
   height: 40px;
   width: 100%;
   margin-left: auto;
@@ -325,7 +325,7 @@
   background: rgba(0, 0, 0, 0.26);
   text-align: center;
   padding: 0 10px 0 10px;
-}
+} */
 
 .commissionText{
   height: 100%;

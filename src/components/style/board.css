@@ -2,7 +2,7 @@
   height: 100%;
   width: 15%;
   color: white;
-  font-size: 30px;
+  font-size: 3.5vh;
   font-weight: 800;
   line-height: 104%;
   text-transform: uppercase;
@@ -32,7 +32,7 @@
   padding-top: 5px;
   font-family: 'Akrobat';
   color: white;
-  font-size: 15px;
+  font-size: 1.1vw;
 }
 
 .name{
@@ -40,7 +40,7 @@
   align-items: center;
   width: 20%;
   height: 40px;
-  margin-right: 40px;
+  margin-right: 2%;
 }
 
 .price{
@@ -48,7 +48,7 @@
   align-items: center;
   width: 20%;
   height: 40px;
-  margin-right: 40px;
+  margin-right: 2%;
 }
 
 .remainingTime{
@@ -56,13 +56,14 @@
   align-items: center;
   width: 20%;
   height: 40px;
+  margin-right: 1%;
 }
 
 .specifications{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 35%;
   height: 40px;
 }
 
@@ -76,7 +77,7 @@
 .lineSlot{
   display: flex;
   align-items: center;
-  height: 90px;
+  height: 10vh;
   width: 100%;
   z-index: 22;
 }
@@ -133,7 +134,7 @@
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 2%;
   width: 20%;
   height: 100%;
 }
@@ -143,15 +144,15 @@
   align-items: center;
   justify-content: center;
   margin: 0 10px 0 10px;
-  height: 75px;
-  width: 75px;
+  height: 80%;
+  width: 60%;
   border-radius: 4px;
   background: radial-gradient(283.13% 156.32% at 50% 50%, rgba(28, 146, 255, 0.25) 0%, rgba(18, 57, 92, 0.25) 100%);
 }
 
 .picItem img{
-  height: auto;
-  width: 65px;
+  max-height: 90%;
+  max-width: 90%;
 }
 
 .infoItem{
@@ -160,7 +161,7 @@
   justify-content: space-between;
   width: 100%;
   height: 80%;
-  font-size: 18px;
+  font-size: 1vw;
   font-family: 'Akrobat';
   color: white;
 }
@@ -186,12 +187,12 @@
 
 .countZone{
   display: flex;
-  margin-right: 40px;
+  margin-right: 2%;
   height: 100%;
   width: 20%;
   align-items: center;
   color: #A8FF63;
-  font-size: 20px;
+  font-size: 1.2vw;
   font-family: 'Akrobat';
   text-shadow: 0px 0px 17px rgba(168, 255, 99, 0.55);
   text-align: left;
@@ -201,11 +202,11 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 1%;
   height: 100%;
   width: 20%;
   color: white;
-  font-size: 15px;
+  font-size: 0.9vw;
   font-family: 'Akrobat';
 }
 
@@ -233,14 +234,20 @@
 
 .location img{
   margin-right: 8px;
+  width: 1vw;
+  height: 1vw;
 }
 
 .userName img{
   margin-right: 8px;
+  width: 1vw;
+  height: 1vw;
 }
 
 .timing img{
   margin-right: 8px;
+  width: 1vw;
+  height: 1vw;
 }
 
 .specificationsZone{
@@ -259,6 +266,11 @@
 
 .conditionItem span{
   color: white;
-  font-size: 20px;
+  font-size: 0.9vw;
   font-family: 'Akrobat';
+}
+
+.conditionItem img{
+  width: 2vw;
+  height: 2vw;
 }
