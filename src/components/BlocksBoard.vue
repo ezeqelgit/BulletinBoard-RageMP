@@ -221,10 +221,14 @@
     },
 
     created() {
-    const timers = this.initializeTimers();
-    this.slotTimers = timers;
-    this.startTimers();
+      const timers = this.initializeTimers();
+      this.slotTimers = timers;
+      this.startTimers();
   },
+
+  beforeUnmount() {
+      this.stopInterval();
+    },
 
     data() {
       return {

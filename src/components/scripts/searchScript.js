@@ -300,24 +300,36 @@ export const searchScript = {
     });
     return timers;
   },
-    startTimers() {
-      this.slotTimers.forEach((timer, index) => {
-        const interval = setInterval(() => {
-          if (timer.time > 0) {
-            this.slotTimers[index].time--;
-          } else {
-            clearInterval(interval);
-            this.slotTimers[index].expired = true;
-          }
-        }, 1000);
+  startTimers() {
+    let timerInterval;
+  
+    const updateTimers = () => {
+      this.slotTimers.forEach((timer) => {
+        if (timer.time > 0) {
+          timer.time--;
+        } else {
+          timer.expired = true;
+        }
       });
-    }, 
+    };
+  
+    const startInterval = () => {
+      timerInterval = setInterval(updateTimers, 1000);
+    };
+  
+    const stopInterval = () => {
+      clearInterval(timerInterval);
+    };
+  
+    stopInterval();
+    startInterval();
+  },
       formatTime(seconds) {
       const hours = Math.floor(seconds / 3600);
       const minutes = Math.floor((seconds % 3600) / 60);
       const secs = seconds % 60;
       return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    },
+    },  
     getCheckedCategories() {
       const checked = [];
       this.categories.forEach(category => {
